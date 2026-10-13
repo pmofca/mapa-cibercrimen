@@ -1,0 +1,24 @@
+name = "sicar-c"
+main = "src/index.js"
+compatibility_date = "2026-10-13"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sicar-c"
+database_id = "c78d1404-1db0-4916-bc54-6b465616abb3"
+
+# Descomentar cuando R2 esté habilitado y el bucket "sicar-c-evidencia" exista:
+# [[r2_buckets]]
+# binding = "EVIDENCIA"
+# bucket_name = "sicar-c-evidencia"
+
+[vars]
+LIMITE_HORA = "5"
+AUTO_PUBLICAR = "1"
+# CARTO_KEY y SALT se cargan como secretos/variables en el panel de Cloudflare (no van en el repositorio).
+# Secreto (no va acá): npx wrangler secret put SALT

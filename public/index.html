@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SICAR-C · Observatorio Civil de Ciberdelitos Argentina</title>
+<meta name="description" content="Observatorio civil independiente. Datos históricos: Informe UFECI/MPF 2024.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="/estilo.css">
+</head>
+<body>
+<header>
+  <div><h1>SICAR-C</h1><p>Sistema de Inteligencia y Correlación de Amenazas para la Resiliencia Civil</p>
+  <small>Observatorio civil independiente · Fuente histórica: UFECI/MPF 2024 · Reportes ciudadanos (sin verificar)</small></div>
+  <nav><a href="https://institucional.infra-ofca.workers.dev/" rel="noopener">Sitio institucional</a><button id="b-nosotros" class="sec" type="button">Nosotros</button></nav>
+</header>
+<main>
+  <aside>
+    <section class="kpis" aria-label="Indicadores">
+      <div><b id="k-ufeci">—</b><span>reportes a UFECI en 2024</span></div>
+      <div><b id="k-civ">—</b><span>reportes ciudadanos publicados</span></div>
+      <div><b id="k-prov">—</b><span>provincias con reportes ciudadanos</span></div>
+      <div><b>6</b><span>categorías (taxonomía UFECI/MPF)</span></div>
+    </section>
+    <section><h2>Reportes a UFECI por año</h2><div id="g-anual" class="barras"></div><p class="fuente">Fuente: Informe 2024 UFECI/MPF, p. 9.</p></section>
+    <section><h2>Distribución por modalidad, 2024</h2><div id="g-mod" class="barras"></div><p class="fuente">Fuente: Informe 2024 UFECI/MPF, p. 12. Total: 34.468 reportes. Datos nacionales; el informe no desagrega por provincia.</p></section>
+  </aside>
+  <div id="mapa" role="application" aria-label="Mapa de reportes ciudadanos por provincia"></div>
+</main>
+<p id="estado-mapa" role="status"></p>
+<button id="b-reportar" class="fab" type="button">+ Reportar amenaza — SICAR-C</button>
+<footer>SICAR-C es un observatorio de monitoreo, no una vía de denuncia oficial. Para denuncias formales: denunciasufeci@mpf.gov.ar · Línea gratuita 137. Los reportes ciudadanos no están verificados y se muestran por provincia, con ubicación aproximada. Datos históricos: Informe Anual UFECI 2024 · MPF.</footer>
+
+<dialog id="d-reporte" aria-labelledby="t-rep"><form id="f-rep" novalidate>
+  <h2 id="t-rep">Nuevo reporte — SICAR-C</h2>
+  <p class="aviso">Es anónimo: no pedimos tus datos personales. No incluyas nombres, teléfonos, DNI ni cuentas bancarias. Guardamos tu reporte y, si no es sensible, lo mostramos sólo como un conteo por provincia. Tu dirección IP se usa únicamente para limitar el abuso y se guarda en forma de huella irreversible.</p>
+  <div class="grid">
+    <label>Tipo de amenaza *<select name="tipo" required></select><em data-e="tipo"></em></label>
+    <label>Severidad *<select name="severidad" required></select><em data-e="severidad"></em></label>
+    <label>Provincia *<select name="provincia" required></select><em data-e="provincia"></em></label>
+    <label>Localidad <input name="localidad" maxlength="80" placeholder="Ciudad / localidad"><em data-e="localidad"></em></label>
+  </div>
+  <label>Medio utilizado por el atacante<select name="medio"></select><em data-e="medio"></em></label>
+  <fieldset><legend>¿Tuvo pérdida económica?</legend>
+    <label class="op"><input type="radio" name="perdida" value="si"> Sí</label><label class="op"><input type="radio" name="perdida" value="no" checked> No</label></fieldset>
+  <label>Descripción del evento *<textarea name="descripcion" rows="5" maxlength="3000" placeholder="Describí el incidente con el mayor detalle posible..."></textarea><em data-e="descripcion"></em></label>
+  <label>Evidencia (captura de pantalla, opcional)<input type="file" name="evidencia" accept="image/png,image/jpeg,image/webp"><small>PNG, JPG o WebP, hasta 3 MB. Se guarda en privado.</small><em data-e="evidencia"></em></label>
+  <p id="msg-form" role="alert"></p>
+  <div class="acc"><button type="button" class="sec" id="b-cancelar">Cancelar</button><button type="submit" id="b-enviar">Enviar reporte</button></div>
+</form>
+<div id="ok" hidden><h2>¡Recibimos tu reporte!</h2><p id="ok-txt"></p><p>Recordá que SICAR-C no reemplaza la denuncia oficial ante el MPF / UFECI.</p><button type="button" id="b-cerrar-ok">Cerrar</button></div></dialog>
+
+<dialog id="d-nos"><h2>Sobre SICAR-C</h2><p>Observatorio civil independiente de ciberdelitos en Argentina. Los datos históricos y la taxonomía de categorías provienen del Informe Anual 2024 de la Unidad Fiscal Especializada en Ciberdelincuencia (UFECI), Ministerio Público Fiscal de la Nación.</p><p>Los reportes ciudadanos son anónimos, no están verificados y se muestran por provincia usando un punto central aproximado.</p><button type="button" id="b-cerrar-nos">Cerrar</button></dialog>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="/app.js" type="module"></script>
+</body></html>
