@@ -1,0 +1,90 @@
+{
+  "fuente": {
+    "organismo": "Unidad Fiscal Especializada en Ciberdelincuencia (UFECI), Ministerio Público Fiscal, Procuración General de la Nación",
+    "titulo": "Informe 2024 - Casos y modalidades reportadas a UFECI",
+    "edicion": "junio 2025",
+    "metodologia": "Registro de reportes recibidos principalmente en la casilla institucional de la UFECI; cada reporte se etiqueta por una o más características de la maniobra (p. 8).",
+    "archivo_original": "UFECI_informe_anual_2024.pdf"
+  },
+  "tipo_de_dato": "estadistica_historica_agregada_nacional",
+  "advertencias": [
+    "Datos agregados a nivel nacional. El informe no incluye provincia, localidad, coordenadas ni registros individuales: NO es posible ubicarlos geograficamente sin inventar datos.",
+    "Los valores se transcriben tal como figuran en el informe, sin ajustes.",
+    "Discrepancia 1: la suma de los 12 valores mensuales de 2023 del grafico de la p. 11 es 28795, pero el informe indica un total anual de 28456 (pp. 9 y 11).",
+    "Discrepancia 2: la serie mensual de estafas piramidales (p. 16) suma 2473, mientras que el texto indica 2204 maniobras de ese tipo.",
+    "Los porcentajes de los graficos de la p. 12 estan redondeados por el informe."
+  ],
+  "contexto": {
+    "consultas_y_reportes_recibidos_hasta_dic_2024": 120264,
+    "investigaciones_preliminares_y_asistencias": "mas de 7500 oportunidades, en aproximadamente 5900 casos distintos",
+    "pagina": 7
+  },
+  "reportes_anuales": {
+    "pagina": 9,
+    "prepandemia_abr2019_mar2020": 2581,
+    "abr2020_mar2021": 14583,
+    "2021": 22364,
+    "2022": 32395,
+    "2023": 28456,
+    "2024": 34468,
+    "variacion_2024_vs_2023_porcentaje": 21.1
+  },
+  "reportes_mensuales": {
+    "paginas": [10, 11],
+    "meses": ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],
+    "2024": [3531,2823,4312,2774,2948,2526,2632,2625,2251,2967,2387,2692],
+    "2023": [3714,3165,3374,3374,2553,2630,2925,2223,974,624,1834,1405]
+  },
+  "modalidades_2024": {
+    "pagina": 12,
+    "meses": ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"],
+    "series": {
+      "Fraude en línea": {"mensual": [2341,1809,2315,1931,1946,1627,1638,1615,1328,1893,1348,1938], "total": 21729, "porcentaje": 63.0},
+      "Usurpación de identidad": {"mensual": [410,322,720,282,387,305,389,395,371,464,439,153], "total": 4637, "porcentaje": 13.5},
+      "Acceso ilegítimo": {"mensual": [309,197,442,168,234,208,199,242,192,230,266,190], "total": 2877, "porcentaje": 8.3},
+      "Phishing": {"mensual": [144,200,283,125,101,136,100,102,88,97,32,155], "total": 1563, "porcentaje": 4.5},
+      "Acoso": {"mensual": [136,136,225,110,109,86,160,110,109,97,97,83], "total": 1458, "porcentaje": 4.2},
+      "Otros": {"mensual": [191,159,327,158,171,164,146,161,163,186,205,173], "total": 2204, "porcentaje": 6.4}
+    },
+    "total": 34468
+  },
+  "detalle_por_modalidad": {
+    "fraude_en_linea": {
+      "pagina": 13,
+      "compra_por_internet": {"porcentaje": 56, "casos": 12004},
+      "homebanking": {"porcentaje": 18, "casos": 3806, "pagina": 16},
+      "piramidal": {"porcentaje": 10, "serie_mensual_p16": [150,100,357,241,302,207,106,92,116,332,201,269]},
+      "otros": {"porcentaje": 16},
+      "alquileres_temporarios": {"pagina": 19, "casos": 488, "serie_mensual": [118,63,69,32,22,20,26,27,12,22,35,42]},
+      "mercado_pago_cuentas": {"casos": 740, "pagina": 18}
+    },
+    "acceso_ilegitimo": {
+      "pagina": 19,
+      "porcentajes": {"WhatsApp": 30, "Mercado Pago": 26, "Otros": 20, "Facebook": 15, "Gmail": 4, "Instagram": 3, "Hotmail": 2},
+      "casos_citados_p20": {"WhatsApp": 872, "Mercado Pago": 740, "Facebook": 440, "Instagram": 92}
+    },
+    "usurpacion_de_identidad_mas_fraude": {
+      "pagina": 22,
+      "total": 4637,
+      "whatsapp_mas_fraude_porcentaje": 84.2,
+      "whatsapp_solo_porcentaje": 15.8,
+      "suma_ataques_whatsapp_acceso_mas_usurpacion": 5509
+    },
+    "phishing": {"pagina": 24, "por_correo_porcentaje": 35, "otros_medios_porcentaje": 65, "reportes_por_correo": 545},
+    "extorsion": {"pagina": 25, "reportes": 774, "por_correo_electronico": 109},
+    "acoso": {
+      "pagina": 26,
+      "total": 1458,
+      "difusion_no_autorizada_imagenes_intimas": {
+        "total": 340,
+        "porcentaje_del_acoso": 23.3,
+        "serie_mensual": [23,23,32,27,28,24,27,19,30,50,29,28]
+      }
+    },
+    "ransomware": {
+      "pagina": 28,
+      "casos_por_anio": {"2022": 20, "2023": 21, "2024": 26},
+      "total_desde_2022": 67
+    }
+  }
+}

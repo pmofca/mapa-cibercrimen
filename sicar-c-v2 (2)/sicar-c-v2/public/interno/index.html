@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SICAR-C · Portal interno de OFCA</title><link rel="stylesheet" href="/interno/interno.css"></head>
+<body>
+<header><div><h1>SICAR-C · Portal interno</h1><p>Observatorio Federal de Ciberdelito de Argentina (OFCA) — acceso restringido</p></div><a href="/">Ver mapa público</a></header>
+<main>
+<p class="aviso" id="aviso-montos"></p>
+<section class="kpis" id="kpis" aria-label="Indicadores"></section>
+<section class="grid2"><div class="card"><h2>Evolución (últimos 30 días con reportes)</h2><div id="g-evolucion" class="barras"></div></div>
+<div class="card"><h2>Pérdida económica</h2><div id="g-perdida" class="barras"></div></div></section>
+<section class="grid3"><div class="card"><h2>Por categoría</h2><div id="g-categoria" class="barras"></div></div><div class="card"><h2>Por severidad</h2><div id="g-severidad" class="barras"></div></div><div class="card"><h2>Por provincia</h2><div id="g-provincia" class="barras"></div></div></section>
+<section class="card"><h2>Bandeja de revisión</h2>
+<form id="filtros"><label>Estado<select name="estado"><option value="">Todos</option><option value="pendiente_revision" selected>Pendientes de revisión</option><option value="publicada">Publicados</option><option value="rechazada">Rechazados</option></select></label>
+<label>Categoría<select name="categoria"></select></label><label>Provincia<select name="provincia"></select></label><label>Severidad<select name="severidad"></select></label>
+<label>Desde<input type="date" name="desde"></label><label>Hasta<input type="date" name="hasta"></label><button type="submit">Filtrar</button></form>
+<p id="estado-lista" role="status"></p>
+<div class="tabla"><table><thead><tr><th>Fecha (UTC)</th><th>Estado</th><th>Categoría</th><th>Severidad</th><th>Provincia</th><th>Pérdida</th><th>Resumen</th></tr></thead><tbody id="filas"></tbody></table></div>
+<nav class="pag"><button id="ant" type="button">‹ Anterior</button><span id="pag-info"></span><button id="sig" type="button">Siguiente ›</button></nav></section>
+</main>
+<dialog id="detalle"><div id="det-cuerpo"></div><p id="det-msg" role="alert"></p>
+<label>Observaciones internas (obligatorias para rechazar)<textarea id="obs" rows="3" maxlength="500"></textarea></label>
+<div class="acc"><button type="button" id="b-aprobar" class="ok">Aprobar y publicar</button><button type="button" id="b-rechazar" class="no">Rechazar</button><button type="button" id="b-pend" class="sec">Mantener pendiente</button><button type="button" id="b-cerrar" class="sec">Cerrar</button></div>
+<h3>Historial de acciones</h3><ul id="hist"></ul></dialog>
+<script src="/interno/interno.js" type="module"></script></body></html>
